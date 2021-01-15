@@ -11,49 +11,26 @@
         href="testpage.css">
     <title>Test Page for Lynkst</title>
 
-    <!-- <script> -->
-    <!-- var isMobile = {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
+    <script type="text/javascript">
+        var ua = navigator.userAgent.toLowerCase();
+        var isAndroid = ua.indexOf("android") > -1;
+        if (isAndroid) {
+            var els = document.querySelectorAll('.android-devices');
+            els.forEach(function (el) {
+                el.classList.add('hide');
+            })
+        }
+    </script>
 
-};
-
-
-
-if (isMobile.Android()) {
-     <a href="ntent://page/346660059402362?referrer=app_link#Intent;package=com.facebook.katana;scheme=fb;end"></a>
-}
-else if(isMobile.iOS())
-{
-    <a href="fb://page/?id=346660059402362">This Text is only visible on iOS</a>
-}
-
-</script> -->
 </head>
 
 <body>
 
-    <div id="android-only">
+    <div class="android-devices">
         <a href="intent://page/346660059402362?referrer=app_link#Intent;package=com.facebook.katana;scheme=fb;end">This
             Text is only visible on Android</a>
     </div>
-    <div id="ios-only">
+    <div id="ios-devices">
         <a href="fb://page/?id=346660059402362">This Text is only visible on iOS</a>
     </div>
 
