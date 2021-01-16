@@ -7,11 +7,11 @@
         content="width=
     , initial-scale=1.0">
 
-    <link rel="stylesheet"
-        href="testpage.css">
+    <!---<link rel="stylesheet"
+        href="testpage.css">--->
     <title>Test Page for Lynkst</title>
 
-    <script type="text/javascript">
+    <!---<script type="text/javascript">
         var ua = navigator.userAgent.toLowerCase();
         var isAndroid = ua.indexOf("android") > -1;
         if (isAndroid) {
@@ -20,16 +20,23 @@
                 el.classList.add('hide');
             })
         }
-    </script>
+    </script>--->
+    
+        <script type="text/javascript">
+            var device = myApp.device.os; switch(device){ case 'ios': $$("#android").hide(); $$("#ios").show(); break; case 'android': $$("#android").show(); $$("#ios").hide(); break; default: $$("#android").hide(); $$("#ios").hide(); }
+
+
+
+        </script>
 </head>
 
 <body>
-
-    <div class="android-devices">
+    
+    <div id="android">
         <a href="intent://page/346660059402362?referrer=app_link#Intent;package=com.facebook.katana;scheme=fb;end">This
             Text is only visible on Android</a>
     </div>
-    <div class="ios-devices">
+    <div id="ios">
         <a href="fb://page/?id=346660059402362">This Text is only visible on iOS</a>
     </div>
 
