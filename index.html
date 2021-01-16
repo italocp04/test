@@ -11,7 +11,7 @@
         href="testpage.css">
     <title>Test Page for Lynkst</title>
 
-    <!---<script type="text/javascript">
+    <script type="text/javascript">
         var ua = navigator.userAgent.toLowerCase();
         var isAndroid = ua.indexOf("android") > -1;
         if (isAndroid) {
@@ -20,8 +20,7 @@
                 el.classList.add('hide');
             })
         }
-    </script>--->
-
+    </script>
 </head>
 
 <body>
@@ -30,8 +29,8 @@
         <a href="intent://page/346660059402362?referrer=app_link#Intent;package=com.facebook.katana;scheme=fb;end">This
             Text is only visible on Android</a>
     </div>
-    <div id="ios-devices">
-        <a href="fb://facewebmodal/f?href=https://www.facebook.com/italobatistarealtor">This Text is only visible on iOS</a>
+    <div id="ios-devices hide">
+        <a href="fb://page/?id=346660059402362">This Text is only visible on iOS</a>
     </div>
 
 </body>
