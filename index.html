@@ -49,12 +49,31 @@ if(!isMobile.iOS()){
        $('.ios').css("visibility", "hidden");
 };
 </script>
+    <script>
+        $(document).on("pageinit", "#home", function (e, data) {
+  $('a.openapp').on('click', function (event) {
+    var scheme;
+    if (iPhone)
+      scheme = "fb://page/?id=" + $(this).data('id');
+    else
+      scheme = "fb://page/" + $(this).data('id');
+    uriSchemeWithHyperlinkFallback(scheme, $(this).attr('href'));
+    event.preventDefault();
+  });
+
+  // Open page in app, else open page in browser 
+  function uriSchemeWithHyperlinkFallback(uri, href) {
+    if (!window.open(uri)) {
+      window.location = href;
+    }
+  }  
+});
+</script>
 </head>
 
 <body>
     
-    
-<a href="fb://profile/346660059402362" class="facebook">My Fanpage</a>
+   <a class="openapp" href="https://www.facebook.com/CFFCarolinasRaleigh/" data-id="134656996545475" ><img class="social_logo" src="./img/fb.png" alt="facebook"></a>
 
     
     <div class="android">
